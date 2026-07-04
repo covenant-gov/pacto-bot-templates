@@ -4,6 +4,7 @@ pacto-bot-api.toml
 # Python cache and virtual environments
 __pycache__/
 *.pyc
+.env
 .pytest_cache/
 .venv/
 venv/
