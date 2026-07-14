@@ -4,7 +4,7 @@ This file guides AI assistants working on the `{{bot_id}}` bot handler.
 
 ## Bot overview
 
-`bots/{{bot_id}}/{{bot_id_snake}}.py` is a Pacto bot handler built on the
+`bots/{{bot_id}}/src/{{bot_id_snake}}/{{bot_id_snake}}.py` is a Pacto bot handler built on the
 `pacto_bot_sdk` SDK. It connects to the `pacto-bot-api` daemon and responds to
 incoming events.
 
@@ -25,7 +25,7 @@ skill for the SDK API and patterns.
 ## How to modify this bot
 
 1. Read the `python-pacto-bot` skill for the SDK API and patterns.
-2. Open `bots/{{bot_id}}/{{bot_id_snake}}.py`.
+2. Open `bots/{{bot_id}}/src/{{bot_id_snake}}/{{bot_id_snake}}.py`.
 3. Use `@bot.command("/name")` to add slash commands or edit existing handlers.
 4. Keep `@bot.default` for unrecognized commands.
 5. Run tests:
@@ -33,6 +33,15 @@ skill for the SDK API and patterns.
    cd bots/{{bot_id}}
    pytest
    ```
+
+## How to run the bot locally
+
+```bash
+cd bots/{{bot_id}}
+python -m {{bot_id_snake}}
+```
+
+Tests import the public API via `from {{bot_id_snake}} import bot`.
 
 ## How to add commands
 

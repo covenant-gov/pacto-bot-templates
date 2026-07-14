@@ -28,7 +28,7 @@ This bot responds to the following slash commands:
    ```
 4. Run the handler:
    ```bash
-   python {{bot_id_snake}}.py
+   python -m {{bot_id_snake}}
    ```
 {% if http %}
 ## External HTTP APIs
@@ -90,7 +90,7 @@ Set the `PACTO_LOG_LEVEL` environment variable to `debug` before starting the
 bot:
 
 ```bash
-PACTO_LOG_LEVEL=debug python {{bot_id_snake}}.py
+PACTO_LOG_LEVEL=debug python -m {{bot_id_snake}}
 ```
 
 In Docker Compose, set the variable in your shell so the compose file passes it

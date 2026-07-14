@@ -9,6 +9,8 @@ pacto-bot-api.toml
 /.git
 /.github
 .env*
+.pacto/
+.agents/
 # Editor and OS files
 .DS_Store
 .vscode/

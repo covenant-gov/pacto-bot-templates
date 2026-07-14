@@ -24,8 +24,11 @@ dev = [
 [tool.hatch.build]
 include = [
     "README.md",
-    "{{bot_id_snake}}.py",
+    "src/{{bot_id_snake}}",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/{{bot_id_snake}}"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
