@@ -4,7 +4,7 @@ kind = "llm"
 description = "Python LLM bot template"
 
 [compatibility]
-contract = { name = "pacto-contract", range = ">=0.1.0, <0.2.0" }
+contract = { name = "pacto-contract", range = ">=0.1.0, <0.3.0" }
 sdk = { name = "pacto-bot-sdk", range = ">=0.2.0, <0.3.0" }
 daemon = { range = ">=0.4.1, <0.8.0" }                                                                                             
 protected_files = ["bot.py", "tests/test_bot.py"]
