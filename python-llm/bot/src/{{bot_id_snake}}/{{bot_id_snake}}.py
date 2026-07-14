@@ -27,5 +27,9 @@ async def unknown(event, bot):
     return {"event_id": event.event_id, "action": "ignore"}
 
 
-if __name__ == "__main__":
+def main():
     bot.run()
+
+
+if __name__ == "__main__":
+    main()

@@ -19,7 +19,7 @@ the `pacto_bot_sdk` SDK.
   add an internal Nostr relay, or `--profile full` for everything. Set
   `PACTO_RELAY_URL` and `PACTO_BUNKER_URI` to point to internal or external
   services.
-- `bots/{{bot_id}}/{{bot_id_snake}}.py` — the bot handler entry point.
+- `bots/{{bot_id}}/src/{{bot_id_snake}}/{{bot_id_snake}}.py` — the bot handler entry point.
 - `bots/{{bot_id}}/pyproject.toml` — Python package metadata for the bot. The
   bot depends on the `pacto-bot-sdk` PyPI package.
 - `.pacto/bots/{{bot_id}}/scaffold.lock` — records the resolved contract,
@@ -38,7 +38,7 @@ the `pacto_bot_sdk` SDK.
 ## When asked to write a bot
 
 1. Read the `python-pacto-bot` skill.
-2. Inspect the existing handler in `bots/{{bot_id}}/{{bot_id_snake}}.py` and the
+2. Inspect the existing handler in `bots/{{bot_id}}/src/{{bot_id_snake}}/{{bot_id_snake}}.py` and the
    capabilities in `pacto-bot-api.toml`.
 3. Add or edit command handlers using the `Bot` decorator API from the SDK.
 4. Run the generated tests in `bots/{{bot_id}}/tests/test_bot.py` to verify.

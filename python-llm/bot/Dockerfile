@@ -8,4 +8,5 @@ WORKDIR /app/bots/{{bot_id}}
 COPY bots/{{bot_id}}/ ./
 RUN pip install --no-cache-dir .
 
-CMD ["python", "{{bot_id_snake}}.py"]
+ENTRYPOINT ["python", "-m", "{{bot_id_snake}}"]
+CMD []
