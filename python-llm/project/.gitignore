@@ -20,3 +20,16 @@ venv/
 .DS_Store
 .vscode/
 .idea/
+
+*.py[cod]
+*.egg-info/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+dist/
+build/
+.eggs/
+
+
