@@ -83,6 +83,19 @@ The CLI clones this repository, selects the template by `--language` and `--kind
 4. Add `bot/` and `project/` subdirectories with the files to render.
 5. Tag a new semver release so the resolver can discover it.
 
+## Supply-chain controls (python-llm)
+
+The Python LLM bot Dockerfile pins the multi-arch `python:3.14-slim` index digest
+and the BuildKit Dockerfile frontend digest, and runs the handler as non-root
+`pacto-bot` (uid/gid 10001). Hashed pip locks are deferred until
+`pacto-bot-sdk` is publish-verifiable on PyPI. Maintainer refresh steps and the
+local smoke script are documented in [`docs/supply-chain.md`](docs/supply-chain.md).
+
+```bash
+./scripts/smoke-python-llm-template.sh
+./scripts/refresh-python-base-digest.sh
+```
+
 ## License
 
 MIT OR Apache-2.0

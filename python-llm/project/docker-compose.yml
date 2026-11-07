@@ -5,6 +5,10 @@ services:
     build:
       context: .
       dockerfile: ./bots/{{bot_id}}/Dockerfile
+    # Runtime user comes from the bot Dockerfile (pacto-bot, uid/gid 10001).
+    # Ensure the daemon Unix socket is reachable by that uid/gid (or use HTTP).
+    security_opt:
+      - no-new-privileges:true
     environment:
       PACTO_LOG_LEVEL: ${PACTO_LOG_LEVEL:-info}
       PACTO_TRANSPORT: ${PACTO_TRANSPORT:-unix}
