@@ -62,8 +62,13 @@ if necessary.
 
 ## Packaging and deployment
 
-- `Dockerfile` — builds a container image for this bot.
-- `systemd.service` — runs the bot as a non-root `pacto-bot` service on the host.
+- `Dockerfile` — builds a container image for this bot. The base image and
+  BuildKit frontend are digest-pinned; the process runs as `pacto-bot`
+  (uid/gid 10001). Do not reintroduce an unpinned floating tag or a root
+  `USER` without an explicit maintainer decision documented in
+  `docs/supply-chain.md`.
+- `systemd.service` — runs the bot as a non-root `pacto-bot` service on the host
+  (`NoNewPrivileges`, `PrivateTmp`).
 - `README.md` — human-facing run and deploy instructions for this bot.
 
 Do not delete or rename these files without updating the project-level

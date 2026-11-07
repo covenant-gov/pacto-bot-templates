@@ -37,6 +37,17 @@ This scaffold was generated with `--http`. `httpx` is already included as a
 runtime dependency and `respx` is included as a dev dependency. Use `respx` in
 `tests/test_http.py` to mock the external endpoints your bot calls.
 {% endif %}
+## Container runtime user
+
+The generated `Dockerfile` installs dependencies at build time, then switches to
+non-root user `pacto-bot` (uid/gid `10001`) for the process. Docker Compose does
+not override that user and enables `no-new-privileges`. If the bot uses the
+daemon Unix socket, ensure the socket is reachable by that uid/gid (or use HTTP
+transport with `PACTO_SECRET_TOKEN`).
+
+Base image and frontend digests are pinned; see the repository
+`docs/supply-chain.md` for how maintainers refresh them.
+
 ## Install as a systemd service
 
 The generated `bots/{{bot_id}}/systemd.service` file runs the bot as a
